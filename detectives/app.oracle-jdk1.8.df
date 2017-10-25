@@ -1,0 +1,10 @@
+FROM alpine:3.4
+LABEL com.docker.v2c.component=detective \
+      com.docker.v2c.component.category=application \
+      com.docker.v2c.component.builtin=1 \
+      com.docker.v2c.component.rel=v2c/oracle-jdk-provisioner:v1.8
+WORKDIR /v2c/disk
+#ENTRYPOINT ["/bin/sh", "-c"]
+CMD cd "$(find -type d -name 'jdk1.8.*')" && tar cv --transform 's,^\.,opt/jdk-8,' .
+#CMD find -type d -name 'jdk1.8.*' -exec tar cv {} \;
+#CMD find /v2c/disk/ -name java | grep '/jdk1.8.*/bin/java'

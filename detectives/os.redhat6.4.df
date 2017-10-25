@@ -1,0 +1,7 @@
+FROM alpine:3.4
+LABEL com.docker.v2c.component=detective \
+      com.docker.v2c.component.category=os \
+      com.docker.v2c.component.builtin=1 \
+      com.docker.v2c.component.rel=v2c/redhat-provisioner:v6.4 
+CMD  grep 'Red Hat Enterprise Linux Server release 6.4 (Santiago)' /v2c/disk/etc/redhat-release
+# CMD  cat /v2c/disk/etc/issue

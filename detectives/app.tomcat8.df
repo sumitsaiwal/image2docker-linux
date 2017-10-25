@@ -1,0 +1,11 @@
+FROM debian:jessie
+LABEL com.docker.v2c.component=detective \
+      com.docker.v2c.component.category=config \
+      com.docker.v2c.component.builtin=1 \
+      com.docker.v2c.component.description=Detects\ and\ captures\ Apache\ Tomcat\ installed\ in\ /opt/tomcat \
+      com.docker.v2c.component.rel=v2c/app.tomcat8-provisioner:v8
+WORKDIR /v2c/disk
+#ENTRYPOINT ["/bin/sh", "-c"]
+CMD cd "$(find -type d -name 'tomcat*')" && tar cv --transform 's,^\.,opt/tomcat,' .
+#CMD find -type d -name 'tomcat*' -exec tar cv {} \;
+#CMD find /v2c/disk/ -type d -name 'tomcat*' 
