@@ -1,4 +1,6 @@
-RUN	addgroup -S tomcat && \
-	adduser -H -h /opt/tomcat -s /bin/false -D -G tomcat tomcat && \
-	chown -R tomcat:tomcat /opt/tomcat
-
+RUN      groupadd tomcat && \
+        useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat && \
+        chown -R tomcat /opt/tomcat
+ENV CATALINA_HOME /opt/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
+# CMD catalina.sh run

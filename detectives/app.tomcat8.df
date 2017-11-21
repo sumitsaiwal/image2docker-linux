@@ -9,3 +9,4 @@ WORKDIR /v2c/disk
 CMD cd "$(find -type d -name 'tomcat*')" && tar cv --transform 's,^\.,opt/tomcat,' .
 #CMD find -type d -name 'tomcat*' -exec tar cv {} \;
 #CMD find /v2c/disk/ -type d -name 'tomcat*' 
+

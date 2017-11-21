@@ -1,4 +1,8 @@
-# v2c - An image analysis and provisioning workflow
+# Forked version of image2Docker tool
+
+### Added Detective for redhat, oracle-jdk
+
+## v2c - An image analysis and provisioning workflow
 
 ## Documentation
 

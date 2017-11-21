@@ -1,1 +1,1 @@
-FROM redhat:6.4
+FROM ubuntu
